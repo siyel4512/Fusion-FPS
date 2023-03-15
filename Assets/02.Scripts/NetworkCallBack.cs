@@ -7,6 +7,8 @@ using System;
 
 public class NetworkCallback : MonoBehaviour, INetworkRunnerCallbacks
 {
+    public static NetworkCallback NC;
+
     private float yaw;
     public float Yaw
     { 
@@ -41,7 +43,19 @@ public class NetworkCallback : MonoBehaviour, INetworkRunnerCallbacks
         } 
     }
 
-     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (NC == null)
+        {
+            NC = this;
+        }
+        else if (NC != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
         
