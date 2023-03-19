@@ -14,6 +14,7 @@ enum Buttons
     back = 1, // 0000 0001
     right = 2, // 0000 0010
     left = 3, // 0000 0011
+    jump = 4,
 }
 
 // class 형태가 아닌 struct 형태로 사용되야 한다.
